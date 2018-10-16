@@ -34,3 +34,47 @@ console.log('geolocated:', lng, lat)
 document.getElementById('info').innerHTML = lng.toFixed(5) + "," + lat.toFixed(5)
 
 })
+map.on('click', function(event) {
+
+    let lng = event.lngLat.lng
+    let lat = event.lngLat.lat
+
+    console.log("clicked:", lng, lat)
+
+    document.getElementById('info').innerHTML = lng.toFixed(5) + "," + lat.toFixed(5)
+
+})
+let data = [
+    {
+        location: [-111.89914,40.768379],
+        content: 'SLC 2002 Winter Olympics: Olympics Medals Plaza'
+    },
+    {
+        location: [-111.8305576,40.766533],
+        content: 'SLC 2002 Winter Olympics: Olympic Village'
+    },
+    {
+        location: [-111.895377,40.7669143371],
+        content: 'SLC 2002 Winter Olympics: Main Media Center'
+    },
+    {
+        location: [-111.848920508,40.7600146417],
+        content: 'SLC 2002 Winter Olympics: Rice Eccles Olympic Stadium'
+    },
+    {
+        location: [-111.56178897,40.7120982755],
+        content: 'SLC 2002 Winter Olympics: Olympic Park (Park City)'
+    },
+    ]
+    data.forEach(function(d) {
+
+    let marker = new mapboxgl.Marker()    
+    marker.setLngLat(d.location)
+    marker.addTo(map)  
+
+    let popup = new mapboxgl.Popup()
+    popup.setHTML(d.content)
+    marker.setPopup(popup)
+
+})
+
