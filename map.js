@@ -4,8 +4,8 @@ mapboxgl.accessToken = 'pk.eyJ1IjoieWFyZGVueiIsImEiOiJjam5hejlmMGkwMWV6M3BsOWJxc
 let map = new mapboxgl.Map({
     container: 'map',
     style: 'mapbox://styles/mapbox/streets-v10',
-    center: [-73.96216,40.80877],
-    zoom: 12
+    center: [-111.7491139,40.74704140],
+    zoom: 11
 })
 let navigation = new mapboxgl.NavigationControl({
     showCompass: false
